@@ -1,0 +1,12 @@
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\bin\Debug\net7.0\API-AdressSearch.Domain.deps.json
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\bin\Debug\net7.0\API-AdressSearch.Domain.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\bin\Debug\net7.0\API-AdressSearch.Domain.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\obj\Debug\net7.0\API-AdressSearch.Domain.csproj.AssemblyReference.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\obj\Debug\net7.0\API-AdressSearch.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\obj\Debug\net7.0\API-AdressSearch.Domain.AssemblyInfoInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\obj\Debug\net7.0\API-AdressSearch.Domain.AssemblyInfo.cs
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\obj\Debug\net7.0\API-AdressSearch.Domain.csproj.CoreCompileInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\obj\Debug\net7.0\API-AdressSearch.Domain.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\obj\Debug\net7.0\refint\API-AdressSearch.Domain.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\obj\Debug\net7.0\API-AdressSearch.Domain.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Domain\obj\Debug\net7.0\ref\API-AdressSearch.Domain.dll

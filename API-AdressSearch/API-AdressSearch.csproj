@@ -8,8 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\API-AdressSearch.Infra.CrossCutting\API-AdressSearch.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\API-AdressSearch.Service\API-AdressSearch.Service.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,15 @@
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\bin\Debug\net7.0\API-AdressSearch.Service.deps.json
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\bin\Debug\net7.0\API-AdressSearch.Service.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\bin\Debug\net7.0\API-AdressSearch.Service.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\bin\Debug\net7.0\API-AdressSearch.Domain.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\bin\Debug\net7.0\API-AdressSearch.Domain.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\API-AdressSearch.Service.csproj.AssemblyReference.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\API-AdressSearch.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\API-AdressSearch.Service.AssemblyInfoInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\API-AdressSearch.Service.AssemblyInfo.cs
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\API-AdressSearch.Service.csproj.CoreCompileInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\API-AdressSearch.Service.csproj.CopyComplete
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\API-AdressSearch.Service.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\refint\API-AdressSearch.Service.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\API-AdressSearch.Service.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Service\obj\Debug\net7.0\ref\API-AdressSearch.Service.dll

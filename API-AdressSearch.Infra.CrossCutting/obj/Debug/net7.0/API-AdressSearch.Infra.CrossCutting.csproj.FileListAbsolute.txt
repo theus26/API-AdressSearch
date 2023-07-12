@@ -1,0 +1,15 @@
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\bin\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.deps.json
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\bin\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\bin\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\bin\Debug\net7.0\API-AdressSearch.Domain.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\bin\Debug\net7.0\API-AdressSearch.Domain.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.csproj.AssemblyReference.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.AssemblyInfoInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.AssemblyInfo.cs
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.csproj.CopyComplete
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\refint\API-AdressSearch.Infra.CrossCutting.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\API-AdressSearch.Infra.CrossCutting.pdb
+C:\Users\mathe\OneDrive\Área de Trabalho\Matheus\Full-Stack\AdressSearch\BackEnd\API-AdressSearch\API-AdressSearch.Infra.CrossCutting\obj\Debug\net7.0\ref\API-AdressSearch.Infra.CrossCutting.dll
