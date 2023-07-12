@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{1A7D71C8-6C4D-4652-AFEF-35230B4275CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{19FFFC13-C614-4777-8CED-72198002CF1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{9362387E-FE86-4B2C-8E00-CBB5AB509C45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A5F909D5-2461-43BE-8237-0462E38034BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{AB24DF94-6002-4CEE-8525-BC60704FC269}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API-AdressSearch", "API-AdressSearch\API-AdressSearch.csproj", "{03DF2F1D-9496-464B-A720-845106706542}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03DF2F1D-9496-464B-A720-845106706542}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03DF2F1D-9496-464B-A720-845106706542}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03DF2F1D-9496-464B-A720-845106706542}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03DF2F1D-9496-464B-A720-845106706542}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5F909D5-2461-43BE-8237-0462E38034BE} = {9362387E-FE86-4B2C-8E00-CBB5AB509C45}
+		{AB24DF94-6002-4CEE-8525-BC60704FC269} = {9362387E-FE86-4B2C-8E00-CBB5AB509C45}
+		{03DF2F1D-9496-464B-A720-845106706542} = {1A7D71C8-6C4D-4652-AFEF-35230B4275CE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB15607A-4DCB-4240-9482-A72A8951D938}
+	EndGlobalSection
+EndGlobal
