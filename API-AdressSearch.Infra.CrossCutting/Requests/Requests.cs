@@ -2,18 +2,18 @@
 using API_AdressSearch.Infra.CrossCutting.Requests.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using System.Data;
-using System.Text.Json.Serialization;
 
 namespace API_AdressSearch.Infra.CrossCutting.Requests
 {
-   
+
     public class Requests : IRequests
     {
         private readonly IConfiguration _configuration;
-        public Requests(IConfiguration configuration)
+        private readonly IHttpClientFactory _httpClientFactory;
+        public Requests(IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
             _configuration = configuration;
+            _httpClientFactory = httpClientFactory;
         }
 
          async Task<List<InfoCepDTO>> IRequests.GetCep(string UF, string city, string logr)
@@ -29,6 +29,7 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
                     var response = await httpClient.GetAsync($"{Url}/{UF}/{city}/{logr}/json/");
                     //Valida resposta da request
                     var statusCode = response.StatusCode;
+
                     if(statusCode == System.Net.HttpStatusCode.OK)
                     {
                         string responseBody =  await response.Content.ReadAsStringAsync();
@@ -45,7 +46,7 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
                         }
                     }
 
-                    return deserialize; 
+                        return deserialize; 
                 }
                 catch (HttpRequestException ex)
                 {
@@ -54,14 +55,76 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
             }
         }
 
-        Task<InfoStateDTO> IRequests.GetState()
+        async Task<List<InfoStateDTO>> IRequests.GetUf()
         {
-            throw new NotImplementedException();
+            var Url = _configuration.GetSection("Urls").GetSection("UrlsIBGE").Value;
+            var deserialize = new List<InfoStateDTO>();
+
+            //Iniciando a request
+            var client = _httpClientFactory.CreateClient();
+
+            try
+            {
+                var response = await client.GetAsync(Url);
+
+                var status = response.IsSuccessStatusCode; // Verifica se a requisição foi bem-sucedida
+
+                if (status == true)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+
+                    try
+                    {
+                        deserialize = JsonConvert.DeserializeObject<List<InfoStateDTO>>(content);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw;
+                    }
+                }
+
+                return deserialize;
+            }
+            catch (HttpRequestException ex)
+            {
+                throw new ArgumentException($"Ocorreu um erro na requisição: {ex.Message}");
+            }
         }
 
-        Task<InfoUfDTO> IRequests.GetUf()
+        async Task<List<InfoCityDTO>> IRequests.GetState(string UF)
         {
-            throw new NotImplementedException();
+            var Url = _configuration.GetSection("Urls").GetSection("UrlsIBGE").Value;
+            var deserialize = new List<InfoCityDTO>();
+
+            //Iniciando a request
+            var client = _httpClientFactory.CreateClient();
+
+            try
+            {
+                var response = await client.GetAsync($"{Url}/{UF}/municipios");
+
+                var status = response.IsSuccessStatusCode; // Verifica se a requisição foi bem-sucedida
+
+                if (status == true)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+
+                    try
+                    {
+                        deserialize = JsonConvert.DeserializeObject<List<InfoCityDTO>>(content);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw;
+                    }
+                }
+
+                return deserialize;
+            }
+            catch (HttpRequestException ex)
+            {
+                throw new ArgumentException($"Ocorreu um erro na requisição: {ex.Message}");
+            }
         }
     }
 }

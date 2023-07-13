@@ -9,6 +9,6 @@ namespace API_AdressSearch.Service.Validators.Interface
 {
     public interface IRequestValidator
     {
-        void Validate(DataDTO data);
+        void Validate(string UF, string City, string logre);
     }
 }
