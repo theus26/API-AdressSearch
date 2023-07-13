@@ -1,5 +1,3 @@
-# API-AdressSearch
-API feita em .net 7, Encontra Cep, Traz todas as Uf´s dos estados e todas as cidades dos estados
 
 # API-AdressSearch
 API feita em .net 7, Encontra Cep, Traz todas as Uf´s dos estados e todas as cidades dos estados.
