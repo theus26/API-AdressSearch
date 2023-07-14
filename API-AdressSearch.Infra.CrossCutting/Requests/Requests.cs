@@ -45,12 +45,17 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
                             throw new Exception($"Erro ao deserializar objeto: {ex.Message} ");
                         }
                     }
+                    else
+                    {
+                        throw new HttpRequestException($"Não foi possivel realizar a request");
+
+                    }
 
                         return deserialize; 
                 }
                 catch (HttpRequestException ex)
                 {
-                    throw new Exception($"Erro ao deserializar objeto: {ex.Message} ");
+                    throw new Exception($"Ocorreu um erro na requisição: {ex.Message}");
                 }
             }
         }
@@ -81,6 +86,10 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
                     {
                         throw;
                     }
+                }
+                else
+                {
+                        throw new HttpRequestException($"Não foi possivel realizar a request");
                 }
 
                 return deserialize;
@@ -117,6 +126,10 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
                     {
                         throw;
                     }
+                }
+                else
+                {
+                    throw new HttpRequestException($"Não foi possivel realizar a request");
                 }
 
                 return deserialize;
