@@ -74,7 +74,7 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
 
                 var status = response.IsSuccessStatusCode; // Verifica se a requisição foi bem-sucedida
 
-                if (status == true)
+                if (status)
                 {
                     var content = await response.Content.ReadAsStringAsync();
 
@@ -114,7 +114,7 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
 
                 var status = response.IsSuccessStatusCode; // Verifica se a requisição foi bem-sucedida
 
-                if (status == true)
+                if (status)
                 {
                     var content = await response.Content.ReadAsStringAsync();
 
