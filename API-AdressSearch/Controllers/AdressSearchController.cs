@@ -28,9 +28,9 @@ namespace API_AdressSearch.Controllers
             try
             {
                 //Valida Dados 
-                _validator.Validate(data.Uf, data.City, data.logre);
+                _validator.Validate(data.Uf, data.City, data.Logre);
                 //Inicia a request
-                var request = await _requests.GetCep(data.Uf, data.City, data.logre);
+                var request = await _requests.GetCep(data.Uf, data.City, data.Logre);
 
                 return Ok(request);
             }

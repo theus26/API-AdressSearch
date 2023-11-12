@@ -1,11 +1,9 @@
-﻿using API_AdressSearch.Domain.DTO;
-using API_AdressSearch.Service.Validators.Interface;
-using FluentValidation;
+﻿using API_AdressSearch.Service.Validators.Interface;
 using System.Text.RegularExpressions;
 
 namespace API_AdressSearch.Service.Validators
 {
-    public class RequestValidator : IRequestValidator
+	public class RequestValidator : IRequestValidator
     {
         public void Validate(string Uf, string City, string logre)
         {

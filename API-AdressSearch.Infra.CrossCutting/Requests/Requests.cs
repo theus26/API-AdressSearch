@@ -19,7 +19,7 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
          async Task<List<InfoCepDTO>> IRequests.GetCep(string UF, string city, string logr)
         {
             var Url = _configuration.GetSection("Urls").GetSection("UrlCep").Value;
-            var  deserialize = new List<InfoCepDTO>();
+            var  Deserialize = new List<InfoCepDTO>();
 
             //Configurando a request
             using (HttpClient httpClient = new HttpClient())
@@ -27,18 +27,17 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
                 try
                 {
                     var response = await httpClient.GetAsync($"{Url}/{UF}/{city}/{logr}/json/");
-                    //Valida resposta da request
-                    var statusCode = response.StatusCode;
+                    
 
-                    if(statusCode == System.Net.HttpStatusCode.OK)
+                    if(response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         string responseBody =  await response.Content.ReadAsStringAsync();
 
-                        if (responseBody == "[]" || responseBody == null) throw new Exception($"Não foi possivel encontrar nada com os parametros informados");
+                        if (responseBody == "[]" || responseBody is null) throw new Exception($"Não foi possivel encontrar nada com os parametros informados");
 
                         try
                         {
-                            deserialize = JsonConvert.DeserializeObject<List<InfoCepDTO>>(responseBody);
+                            Deserialize = JsonConvert.DeserializeObject<List<InfoCepDTO>>(responseBody);
                         }
                         catch (Exception ex)
                         {
@@ -51,11 +50,11 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
 
                     }
 
-                        return deserialize; 
+                        return Deserialize; 
                 }
                 catch (HttpRequestException ex)
                 {
-                    throw new Exception($"Ocorreu um erro na requisição: {ex.Message}");
+                    throw new HttpRequestException($"Ocorreu um erro na requisição: {ex.Message}");
                 }
             }
         }
@@ -63,7 +62,7 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
         async Task<List<InfoStateDTO>> IRequests.GetUf()
         {
             var Url = _configuration.GetSection("Urls").GetSection("UrlsIBGE").Value;
-            var deserialize = new List<InfoStateDTO>();
+            var Deserialize = new List<InfoStateDTO>();
 
             //Iniciando a request
             var client = _httpClientFactory.CreateClient();
@@ -72,15 +71,13 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
             {
                 var response = await client.GetAsync(Url);
 
-                var status = response.IsSuccessStatusCode; // Verifica se a requisição foi bem-sucedida
-
-                if (status)
+                if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
 
                     try
                     {
-                        deserialize = JsonConvert.DeserializeObject<List<InfoStateDTO>>(content);
+                        Deserialize = JsonConvert.DeserializeObject<List<InfoStateDTO>>(content);
                     }
                     catch (Exception ex)
                     {
@@ -92,18 +89,18 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
                         throw new HttpRequestException($"Não foi possivel realizar a request");
                 }
 
-                return deserialize;
+                return Deserialize;
             }
             catch (HttpRequestException ex)
             {
-                throw new ArgumentException($"Ocorreu um erro na requisição: {ex.Message}");
+                throw new HttpRequestException($"Ocorreu um erro na requisição: {ex.Message}");
             }
         }
 
         async Task<List<InfoCityDTO>> IRequests.GetState(string UF)
         {
             var Url = _configuration.GetSection("Urls").GetSection("UrlsIBGE").Value;
-            var deserialize = new List<InfoCityDTO>();
+            var Deserialize = new List<InfoCityDTO>();
 
             //Iniciando a request
             var client = _httpClientFactory.CreateClient();
@@ -112,15 +109,13 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
             {
                 var response = await client.GetAsync($"{Url}/{UF}/municipios");
 
-                var status = response.IsSuccessStatusCode; // Verifica se a requisição foi bem-sucedida
-
-                if (status)
+                if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
 
                     try
                     {
-                        deserialize = JsonConvert.DeserializeObject<List<InfoCityDTO>>(content);
+                        Deserialize = JsonConvert.DeserializeObject<List<InfoCityDTO>>(content);
                     }
                     catch (Exception ex)
                     {
@@ -132,11 +127,11 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
                     throw new HttpRequestException($"Não foi possivel realizar a request");
                 }
 
-                return deserialize;
+                return Deserialize;
             }
             catch (HttpRequestException ex)
             {
-                throw new ArgumentException($"Ocorreu um erro na requisição: {ex.Message}");
+                throw new HttpRequestException($"Ocorreu um erro na requisição: {ex.Message}");
             }
         }
     }

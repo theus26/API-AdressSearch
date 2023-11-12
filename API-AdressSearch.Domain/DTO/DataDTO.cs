@@ -10,6 +10,6 @@ namespace API_AdressSearch.Domain.DTO
     {
         public string? Uf { get; set; }  
         public string? City { get; set; }  
-        public string? logre { get; set; }  
+        public string? Logre { get; set; }  
     }
 }
