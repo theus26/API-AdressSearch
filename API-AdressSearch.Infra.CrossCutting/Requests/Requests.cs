@@ -10,86 +10,36 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
     {
         private readonly IConfiguration _configuration;
         private readonly IHttpClientFactory _httpClientFactory;
+
         public Requests(IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
             _configuration = configuration;
             _httpClientFactory = httpClientFactory;
         }
 
-         async Task<List<InfoCepDTO>> IRequests.GetCep(string UF, string city, string logr)
+         async Task<List<InfoCepDTO>?> IRequests.GetCep(DataDTO data)
         {
-            var Url = _configuration.GetSection("Urls").GetSection("UrlCep").Value;
-            var  Deserialize = new List<InfoCepDTO>();
-
-            //Configurando a request
-            using (HttpClient httpClient = new HttpClient())
-            {
-                try
-                {
-                    var response = await httpClient.GetAsync($"{Url}/{UF}/{city}/{logr}/json/");
-                    
-
-                    if(response.StatusCode == System.Net.HttpStatusCode.OK)
-                    {
-                        string responseBody =  await response.Content.ReadAsStringAsync();
-
-                        if (responseBody == "[]" || responseBody is null) throw new Exception($"Não foi possivel encontrar nada com os parametros informados");
-
-                        try
-                        {
-                            Deserialize = JsonConvert.DeserializeObject<List<InfoCepDTO>>(responseBody);
-                        }
-                        catch (Exception ex)
-                        {
-                            throw new Exception($"Erro ao deserializar objeto: {ex.Message} ");
-                        }
-                    }
-                    else
-                    {
-                        throw new HttpRequestException($"Não foi possivel realizar a request");
-
-                    }
-
-                        return Deserialize; 
-                }
-                catch (HttpRequestException ex)
-                {
-                    throw new HttpRequestException($"Ocorreu um erro na requisição: {ex.Message}");
-                }
-            }
-        }
-
-        async Task<List<InfoStateDTO>> IRequests.GetUf()
-        {
-            var Url = _configuration.GetSection("Urls").GetSection("UrlsIBGE").Value;
-            var Deserialize = new List<InfoStateDTO>();
-
-            //Iniciando a request
-            var client = _httpClientFactory.CreateClient();
-
+            var url = _configuration.GetSection("Urls").GetSection("UrlCep").Value;
+            using var httpClient = new HttpClient();
             try
             {
-                var response = await client.GetAsync(Url);
+                var response = await httpClient.GetAsync($"{url}/{data.Uf}/{data.City}/{data.Logre}/json/");
 
-                if (response.IsSuccessStatusCode)
+                if (!response.IsSuccessStatusCode)
+                    throw new HttpRequestException($"Não foi possivel realizar a request");
+
+                var responseBody =  await response.Content.ReadAsStringAsync();
+
+                if (responseBody is "[]" or null) throw new Exception($"Não foi possivel encontrar nada com os parametros informados");
+
+                try
                 {
-                    var content = await response.Content.ReadAsStringAsync();
-
-                    try
-                    {
-                        Deserialize = JsonConvert.DeserializeObject<List<InfoStateDTO>>(content);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw;
-                    }
+                    return JsonConvert.DeserializeObject<List<InfoCepDTO>>(responseBody);
                 }
-                else
+                catch (Exception ex)
                 {
-                        throw new HttpRequestException($"Não foi possivel realizar a request");
+                    throw new Exception($"Erro ao deserializar objeto: {ex.Message} ");
                 }
-
-                return Deserialize;
             }
             catch (HttpRequestException ex)
             {
@@ -97,37 +47,41 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests
             }
         }
 
-        async Task<List<InfoCityDTO>> IRequests.GetState(string UF)
+        async Task<List<InfoStateDTO>?> IRequests.GetUf()
         {
-            var Url = _configuration.GetSection("Urls").GetSection("UrlsIBGE").Value;
-            var Deserialize = new List<InfoCityDTO>();
-
-            //Iniciando a request
+            var url = _configuration.GetSection("Urls").GetSection("UrlsIBGE").Value;
             var client = _httpClientFactory.CreateClient();
 
             try
             {
-                var response = await client.GetAsync($"{Url}/{UF}/municipios");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var content = await response.Content.ReadAsStringAsync();
-
-                    try
-                    {
-                        Deserialize = JsonConvert.DeserializeObject<List<InfoCityDTO>>(content);
-                    }
-                    catch (Exception ex)
-                    {
-                        throw;
-                    }
-                }
-                else
-                {
+                var response = await client.GetAsync(url);
+                if (!response.IsSuccessStatusCode)
                     throw new HttpRequestException($"Não foi possivel realizar a request");
-                }
 
-                return Deserialize;
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<InfoStateDTO>>(content);
+            }
+            catch (HttpRequestException ex)
+            {
+                throw new HttpRequestException($"Ocorreu um erro na requisição: {ex.Message}");
+            }
+        }
+
+        async Task<List<InfoCityDTO>?> IRequests.GetState(string uf)
+        {
+            var url = _configuration.GetSection("Urls").GetSection("UrlsIBGE").Value;
+            var client = _httpClientFactory.CreateClient();
+
+            try
+            {
+                var response = await client.GetAsync($"{url}/{uf}/municipios");
+
+                if (!response.IsSuccessStatusCode)
+                    throw new HttpRequestException($"Não foi possivel realizar a request");
+
+                var content = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<InfoCityDTO>>(content);
+
             }
             catch (HttpRequestException ex)
             {

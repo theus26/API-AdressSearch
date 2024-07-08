@@ -10,11 +10,11 @@ namespace API_AdressSearch.Controllers
     public class AdressSearchController : Controller
     {
         private readonly IRequests _requests;
-        private readonly IRequestValidator _validator;
-        public AdressSearchController(IRequests requests, IRequestValidator requestValidator )
+        private readonly IValidator _validator;
+        public AdressSearchController(IRequests requests, IValidator validator )
         {
             _requests = requests;
-            _validator = requestValidator;
+            _validator = validator;
         }
         [HttpGet]
         public ActionResult HelthCheck()
@@ -23,20 +23,18 @@ namespace API_AdressSearch.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAdressForInfo(DataDTO data)
+        public async Task<IActionResult> GetAdressForInfo([FromQuery] DataDTO data)
         {
             try
             {
-                //Valida Dados 
-                _validator.Validate(data.Uf, data.City, data.Logre);
-                //Inicia a request
-                var request = await _requests.GetCep(data.Uf, data.City, data.Logre);
+                _validator.Validate(data);
+                var request = await _requests.GetCep(data);
 
                 return Ok(request);
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, new RespostaErroDTO()
+                return StatusCode(StatusCodes.Status400BadRequest, new ResponseErrorDTO()
                 {
                     Status = StatusCodes.Status400BadRequest,
                     Error = ex.Message,
@@ -55,7 +53,7 @@ namespace API_AdressSearch.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, new RespostaErroDTO()
+                return StatusCode(StatusCodes.Status400BadRequest, new ResponseErrorDTO()
                 {
                     Status = StatusCodes.Status400BadRequest,
                     Error = ex.Message,
@@ -65,17 +63,17 @@ namespace API_AdressSearch.Controllers
         }
 
 
-        [HttpGet("{UF}")]
-        public async Task<IActionResult> GetInfoCity(string UF)
+        [HttpGet("uf")]
+        public async Task<IActionResult> GetInfoCity([FromQuery] string uf)
         {
             try
             {
-                var request = await _requests.GetState(UF);
+                var request = await _requests.GetState(uf);
                 return Ok(request);
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, new RespostaErroDTO()
+                return StatusCode(StatusCodes.Status400BadRequest, new ResponseErrorDTO()
                 {
                     Status = StatusCodes.Status400BadRequest,
                     Error = ex.Message,

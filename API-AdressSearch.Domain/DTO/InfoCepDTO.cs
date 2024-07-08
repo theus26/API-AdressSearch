@@ -1,6 +1,4 @@
-﻿namespace API_AdressSearch.Domain.DTO
-{
-  
+﻿namespace API_AdressSearch.Domain.DTO;
 
     public class InfoCepDTO
     {
@@ -16,7 +14,4 @@
         public string Siafi { get; set; }
     }
 
-    
-
-}
 

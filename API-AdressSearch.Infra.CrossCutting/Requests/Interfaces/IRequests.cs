@@ -5,8 +5,8 @@ namespace API_AdressSearch.Infra.CrossCutting.Requests.Interfaces
 {
     public interface IRequests
     {
-        Task<List<InfoCepDTO>> GetCep(string UF, string city, string logr);
-        Task<List<InfoStateDTO>> GetUf();
-        Task<List<InfoCityDTO>> GetState(string UF);
+        Task<List<InfoCepDTO>?> GetCep(DataDTO data);
+        Task<List<InfoStateDTO>?> GetUf();
+        Task<List<InfoCityDTO>?> GetState(string uf);
     }
 }
